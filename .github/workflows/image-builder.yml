@@ -21,6 +21,7 @@ env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
   VERSION: 23.05.4
+  DOWNLOAD_URL: $DOWNLOAD_BASE/releases/$VERSION/targets/x86/64/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.xz
   TZ: Asia/Shanghai
 
 jobs:
@@ -40,7 +41,7 @@ jobs:
 
     - name: Download and extract Image Builder
       run: |
-        wget -O /tmp/imagebuilder.tar.xz $DOWNLOAD_BASE/releases/$VERSION/targets/x86/64/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.xz
+        wget -O /tmp/imagebuilder.tar.xz DOWNLOAD_URL
         sudo tar -C /tmp -xvf /tmp/imagebuilder.tar.xz
 
     - name: Set Image Builder root directory
