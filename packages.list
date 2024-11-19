@@ -12,6 +12,7 @@ automount
 bash
 luci-i18n-filebrowser-zh-cn
 luci-i18n-cifs-mount-zh-cn
+webdav2
 unishare luci-app-unishare
 unishare luci-app-partexp
 luci-app-openclash
