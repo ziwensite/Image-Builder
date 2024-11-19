@@ -18,3 +18,4 @@ luci-lib-taskd
 luci-lib-xterm
 luci-app-store
 luci-i18n-dockerman-zh-cn
+luci-app-fileassistant
