@@ -87,15 +87,15 @@ jobs:
         name: ImmortalWrt-firmware-${{ env.PROFILE }}-${{ env.FILE_DATE }}
         path: /tmp/bin_firmware
     - name: Upload Firmware to Release
-        if: github.event.inputs.release == 'true'
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file_glob: true
-          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64/bin/targets/x86/64/*
-          asset_name: ${{ env.DATE }}-${{ github.event.repository.name }}-${{ github.sha }}
-          tag: ${{ env.VENDOR }}-release-${{ env.DATE }}
-          overwrite: true
+      if: github.event.inputs.release == 'true'
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file_glob: true
+        file: /tmp/bin_firmware/*
+        asset_name: ${{ env.DATE }}-${{ github.event.repository.name }}-${{ github.sha }}
+        tag: ${{ env.VENDOR }}-release-${{ env.DATE }}
+        overwrite: true
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
