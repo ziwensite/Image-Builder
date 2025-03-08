@@ -45,12 +45,12 @@ jobs:
     
     - name: Download and extract Image Builder
       run: |
-        wget -O /tmp/imagebuilder.tar.xz $DOWNLOAD_BASE/releases/$VERSION/targets/x86/64/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.zst
+        wget -O /tmp/imagebuilder.tar.zst $DOWNLOAD_BASE/releases/$VERSION/targets/x86/64/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.zst
         sudo tar -C /tmp -xvf /tmp/imagebuilder.tar.zst
 
     - name: Set Image Builder root directory
       run: |
-        ROOT_DIRECTORY=$(basename $DOWNLOAD_BASE/releases/$VERSION/targets/x86/64/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.xz .tar.zst)
+        ROOT_DIRECTORY=$(basename $DOWNLOAD_BASE/releases/$VERSION/targets/x86/64/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.zst .tar.zst)
         echo "ROOT_DIRECTORY=/tmp/$ROOT_DIRECTORY" >> $GITHUB_ENV
 
     - name: Modify .config file
