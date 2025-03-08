@@ -20,7 +20,7 @@ env:
   PACKAGES_FOLDER: packages
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
-  VERSION: 23.05.4
+  VERSION: 24.10.0
   TZ: Asia/Shanghai
 
 jobs:
